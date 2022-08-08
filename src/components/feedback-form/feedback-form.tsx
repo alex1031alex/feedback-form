@@ -22,7 +22,7 @@ export const FeedbackForm = () => {
       </div>
       <div className="feedback-form__group">
         <label className="feedback-form__label" htmlFor="feedback-form-text">Сообщение</label>
-        <textarea className="feedback-form__field" name="text" id="feedback-form-text" />
+        <textarea className="feedback-form__field feedback-form__field--text" name="text" id="feedback-form-text" rows={4} />
       </div>
       <button className="feedback-form__btn" type="submit">Отправить</button>
     </form>

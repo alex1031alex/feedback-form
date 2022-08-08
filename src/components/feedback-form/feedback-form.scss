@@ -1,0 +1,44 @@
+.feedback-form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    text-transform: uppercase;
+  }
+
+  &__field {
+    min-height: 40px;
+    padding: 0 10px;
+    border-radius: 16px;
+    border: 1px solid #d1d1d1;
+    font-size: 16px;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      transition: background-color 600000s 0s, color 600000s 0s;
+    }
+
+    &--text {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__btn {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 16px;
+  background-color: var(--accent-color);
+  text-transform: uppercase;
+  color: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  }
+}
