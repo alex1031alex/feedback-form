@@ -25,6 +25,10 @@
       padding-top: 10px;
       padding-bottom: 10px;
     }
+
+    &--name {
+      text-transform: uppercase;
+    }
   }
 
   &__btn {
@@ -33,7 +37,7 @@
   padding: 14px 0;
   border: none;
   border-radius: 16px;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   text-transform: uppercase;
   color: #fff;
   font-family: inherit;
