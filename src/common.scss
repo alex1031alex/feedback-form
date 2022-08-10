@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --container-width: 320px;
+  --text-color: #000;
+  --primary-color: #3d50b6;
+  --secondary-color: #b7b7b7;
+  --accent-color: #ff7373;
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
