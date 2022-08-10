@@ -1,4 +1,3 @@
-import React from "react";
 import { FeedbackForm } from "../feedback-form/feedback-form";
 import "./app.scss";
 
