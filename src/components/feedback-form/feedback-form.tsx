@@ -129,6 +129,18 @@ export const FeedbackForm: FC = () => {
 
     const emptyFieldEntry: [string, string] | undefined = Object.entries(inputValues).find(([, value]) => value === "");
 
+    const [firstName, lastName] = inputValues.name.split(" ");
+
+    if (firstName.length < 3 || lastName.length < 3) {
+      setInputErrors({...inputErrors, "name": "Имя и фамилия должны быть не короче 3-х символов"})
+      return;
+    }
+
+    if (firstName.length > 30 || lastName.length > 30) {
+      setInputErrors({...inputErrors, "name": "Имя и фамилия должны быть не длинее 30 символов"})
+      return;
+    }
+
     if (emptyFieldEntry !== undefined) {
       const [key, ] = emptyFieldEntry;
       setInputErrors({...inputErrors, [key]: "Поле не должно быть пустым"})
@@ -141,7 +153,6 @@ export const FeedbackForm: FC = () => {
 
     const formData = new FormData();
 
-    const [firstName, lastName] = inputValues.name.split(" ");
     const tel = inputValues.tel.replace(/[^\d]/g, "").slice(1);
     const birthDate = new Date(inputValues.birth).toString();
 
