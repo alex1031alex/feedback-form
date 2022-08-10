@@ -1,4 +1,11 @@
-import {ChangeEvent, FC, useState, FormEvent, KeyboardEvent} from "react";
+import {
+  ChangeEvent,
+  FC,
+  useState,
+  FormEvent,
+  KeyboardEvent,
+  MouseEvent
+} from "react";
 import "./feedback-form.scss";
 import "../error-message/error-message";
 import { ErrorMessage } from "../error-message/error-message";
@@ -107,6 +114,14 @@ export const FeedbackForm: FC = () => {
     } else {
       setInputErrors({...inputErrors, "text": ""});
     }
+  };
+
+  const onResetBtnClick = (evt: MouseEvent<HTMLButtonElement>) => {
+    evt.preventDefault();
+
+    setInputErrors(INITIAL_ERRORS);
+    setInputValues(INITIAL_VALUES);
+    setSendStatusMessage("");
   };
 
   const onFormSubmit = (evt: FormEvent<HTMLFormElement>) => {
@@ -220,7 +235,8 @@ export const FeedbackForm: FC = () => {
           />
           <ErrorMessage message={inputErrors.text} />
         </div>
-        <button className="feedback-form__btn" type="submit" disabled={isDisabled}>Отправить</button>
+        <button className="feedback-form__btn feedback-form__btn--reset" type="reset" onClick={onResetBtnClick}>Очистить форму</button>
+        <button className="feedback-form__btn feedback-form__btn--submit" type="submit" disabled={isDisabled}>Отправить</button>
       </form>
       {sendStatusMessage && <p className="feedback-form__status">{sendStatusMessage}</p>}
     </>
